@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+data/surreal/
+.claude/settings.local.json
+.ua/intermediate/
+.ua/tmp/
+.ua/.trash-*/

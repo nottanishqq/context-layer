@@ -1,0 +1,9 @@
+# Alternative to a local `surreal` binary: docker compose up -d
+services:
+  surrealdb:
+    image: surrealdb/surrealdb:v3.2.3
+    command: start --user root --pass root --bind 0.0.0.0:8000 surrealkv:/data/context.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/surreal:/data

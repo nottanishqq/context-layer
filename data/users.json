@@ -1,0 +1,5 @@
+[
+  {"email": "pat@lumenpay.example", "name": "Pat", "password": "demo-pat-2026", "teams": ["payments"]},
+  {"email": "sam@lumenpay.example", "name": "Sam", "password": "demo-sam-2026", "teams": ["security", "platform"]},
+  {"email": "alex@lumenpay.example", "name": "Alex", "password": "demo-alex-2026", "teams": []}
+]

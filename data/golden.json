@@ -1,0 +1,29 @@
+[
+  {"question": "What does ERR_LEDGER_409 mean?", "relevant": ["idempotency-keys", "ledger-service"], "tags": ["lexical"]},
+  {"question": "What is ERR_CHECKOUT_429?", "relevant": ["rate-limiting", "checkout-api"], "tags": ["lexical"]},
+  {"question": "When do I need to set READS_FROM_PRIMARY?", "relevant": ["runbook-ledger-lag"], "tags": ["lexical"]},
+  {"question": "kubectl scale worker replicas beyond partition count", "relevant": ["runbook-consumer-lag"], "tags": ["lexical"]},
+  {"question": "What happens if Redis is unavailable?", "relevant": ["rate-limiting"], "tags": ["lexical"]},
+  {"question": "relayctl skip offset", "relevant": ["runbook-consumer-lag"], "tags": ["lexical"]},
+
+  {"question": "Which setting controls how long the ledger remembers a retried request?", "relevant": ["idempotency-keys"], "tags": ["semantic"]},
+  {"question": "Which alert fires when database copies fall behind the main one?", "relevant": ["ledger-service", "runbook-ledger-lag"], "tags": ["semantic"]},
+  {"question": "How does a merchant get allowed to send more requests per second?", "relevant": ["rate-limiting"], "tags": ["semantic"]},
+  {"question": "What severity is it when a customer pays twice for one order?", "relevant": ["severity-levels"], "tags": ["semantic"]},
+  {"question": "Merchants see payouts that haven't shown up in their balance yet. What's going on?", "relevant": ["runbook-ledger-lag"], "tags": ["semantic"]},
+  {"question": "How do clients make it safe to resend a payment request?", "relevant": ["idempotency-keys", "checkout-api"], "tags": ["semantic"]},
+  {"question": "Where does every money movement get published for other systems to consume?", "relevant": ["ledger-service", "queue-platform"], "tags": ["semantic"]},
+
+  {"question": "How long are application logs kept?", "relevant": ["data-retention-policy"], "tags": ["simple"]},
+  {"question": "How quickly must the primary on-call acknowledge a page?", "relevant": ["on-call-handbook"], "tags": ["simple"]},
+  {"question": "When do dashboard sessions expire?", "relevant": ["session-policy"], "tags": ["simple"]},
+  {"question": "How long is the overlap window when signing keys are rotated?", "relevant": ["token-rotation"], "tags": ["simple"]},
+  {"question": "How does Postgres failover work?", "relevant": ["postgres-cluster"], "tags": ["simple"]},
+  {"question": "What is a journal entry?", "relevant": ["glossary", "ledger-service"], "tags": ["simple"]},
+
+  {"question": "Why were customers charged twice in March, and what setting needs changing?", "relevant": ["incident-2026-03-duplicate-charges", "idempotency-keys"], "tags": ["multihop"]},
+  {"question": "Customers in Europe say payment confirmation emails show up hours late. How do we fix it?", "relevant": ["notification-service", "queue-platform", "runbook-consumer-lag"], "tags": ["multihop"]},
+  {"question": "Staff couldn't reach internal tools just after 2am on the first of the month. What should on-call do?", "relevant": ["runbook-auth-outage", "token-rotation"], "tags": ["multihop"]},
+  {"question": "Where physically are the ledger's idempotency keys stored, and how is that database backed up?", "relevant": ["idempotency-keys", "postgres-cluster"], "tags": ["multihop"]},
+  {"question": "A merchant is getting 429s at checkout. What system holds the counters and what happens if it fails?", "relevant": ["checkout-api", "rate-limiting"], "tags": ["multihop"]}
+]

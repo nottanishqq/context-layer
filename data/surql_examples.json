@@ -1,0 +1,38 @@
+[
+  {
+    "question": "How many documents are there of each kind?",
+    "query": "SELECT kind, count() AS documents FROM document GROUP BY kind ORDER BY documents DESC"
+  },
+  {
+    "question": "List all runbooks with their tags.",
+    "query": "SELECT id, title, tags FROM document WHERE kind = 'runbook' ORDER BY title"
+  },
+  {
+    "question": "Which documents link to the ledger service?",
+    "query": "SELECT VALUE <-links_to<-document.title FROM ONLY document:`ledger-service`"
+  },
+  {
+    "question": "What does the on-call handbook link to?",
+    "query": "SELECT id, title FROM document:`on-call-handbook`->links_to->document"
+  },
+  {
+    "question": "Which documents mention ERR_AUTH_401?",
+    "query": "SELECT document.title AS title, heading FROM chunk WHERE strategy = 'section' AND text @@ 'ERR_AUTH_401' GROUP BY title, heading"
+  },
+  {
+    "question": "Which documents are tagged security?",
+    "query": "SELECT id, title FROM document WHERE tags CONTAINS 'security'"
+  },
+  {
+    "question": "Which incident reports were written, newest first?",
+    "query": "SELECT title, metadata.date AS date FROM document WHERE kind = 'incident' ORDER BY date DESC"
+  },
+  {
+    "question": "Which document has the most outgoing links?",
+    "query": "SELECT title, count(->links_to) AS links FROM document ORDER BY links DESC LIMIT 1"
+  },
+  {
+    "question": "What can you reach within two links of the notification service?",
+    "query": "SELECT VALUE title FROM document:`notification-service`.{1..2+collect}(->links_to->document)"
+  }
+]
